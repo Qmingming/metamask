@@ -41,7 +41,7 @@ const CHAIN_ID_REQUIRED = 5; //Mumbai
  */
 const CONTRACT_ON_CHAINS = {
     1: '0x76460E73eadE1DDe315E07a5eCa092448c193a2F',
-    5: '0x0a6F77727ca8EdDa8761b1E4436993D503f054dD',
+    5: '0x280a8F2280B93d6767169B066f918567A247Ca85',
     137: '0x375F01b156D9BdDDd41fd38c5CC74C514CB71f73',
     1337: '',
     1402: '0x76460E73eadE1DDe315E07a5eCa092448c193a2F',
@@ -67,7 +67,13 @@ const BLOCKCHAIN_EXPLORERS = {
  */
 const CONTRACT_ABI = [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
 				"name": "do_mine",
 				"outputs": [],
 				"stateMutability": "nonpayable",
