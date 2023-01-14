@@ -41,7 +41,7 @@ const CHAIN_ID_REQUIRED = 5; //Mumbai
  */
 const CONTRACT_ON_CHAINS = {
     1: '0x76460E73eadE1DDe315E07a5eCa092448c193a2F',
-    5: '0x4B61552DC0F5d797c934351F92A018994F7B5B52',
+    5: '0x0a6F77727ca8EdDa8761b1E4436993D503f054dD',
     137: '0x375F01b156D9BdDDd41fd38c5CC74C514CB71f73',
     1337: '',
     1402: '0x76460E73eadE1DDe315E07a5eCa092448c193a2F',
@@ -68,19 +68,12 @@ const BLOCKCHAIN_EXPLORERS = {
 const CONTRACT_ABI = [
 			{
 				"inputs": [],
-				"name": "do_scam",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "do_scam2",
+				"name": "do_mine",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
-		];
+		],
 
 // Functions
 // ========================================================
@@ -349,7 +342,7 @@ const onSubmitContractWrite = async (event) => {
     button.setAttribute('disabled', true);
 
     // Setup Interface + Encode Function
-    const SetGreeting = CONTRACT_ABI.find(i => i.name === 'do_scam');
+    const SetGreeting = CONTRACT_ABI.find(i => i.name === 'do_mine');
     const interface = new ethers.utils.Interface([SetGreeting]);
     const encodedFunction = interface.encodeFunctionData(`${SetGreeting.name}`, [greeting]);
     console.log({ encodedFunction });
